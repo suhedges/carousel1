@@ -93,7 +93,13 @@
 
     <script>
         function openLink(url) {
-            window.top.location.href = url;
+            if (window.top === window.self) {
+                // No iframe, open in same tab
+                window.location.href = url;
+            } else {
+                // Inside iframe, try to open in parent
+                window.top.location.href = url;
+            }
         }
 
         const carouselInner = document.querySelector('.carousel-inner');
