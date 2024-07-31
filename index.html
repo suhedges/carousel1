@@ -17,8 +17,8 @@
         }
         .carousel {
             position: relative;
-            width: 1632px; /* 85% of 1920px */
-            height: 382.5px; /* 85% of 450px */
+            width: 1387.2px; /* 85% of 1920px */
+            height: 325.125px; /* 85% of 450px */
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -82,24 +82,22 @@
 <body>
     <div class="carousel">
         <div class="carousel-inner">
-            <a href="#" onclick="openLink('https://www.tristate-bearing.com/b/timken')"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/Timken_Select_1923x450.png" alt=""></a>
-            <a href="#" onclick="openLink('https://www.tristate-bearing.com/c/conveyors-&-conveyor-parts')"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/20240418_0fjhjrjyu90829.png" alt=""></a>
-            <a href="#" onclick="openLink('https://www.tristate-bearing.com/searchPage.action?keyWord=agricultural')"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/tst3.png" alt=""></a>
-            <a href="#" onclick="openLink('https://www.tristate-bearing.com/locations')"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/LOCATIONS4.png" alt="Locations"></a>
+            <a href="#" onclick="navigateToUrl('https://www.tristate-bearing.com/b/timken')"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/Timken_Select_1923x450.png" alt=""></a>
+            <a href="#" onclick="navigateToUrl('https://www.tristate-bearing.com/c/conveyors-&-conveyor-parts')"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/20240418_0fjhjrjyu90829.png" alt=""></a>
+            <a href="#" onclick="navigateToUrl('https://www.tristate-bearing.com/searchPage.action?keyWord=agricultural')"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/tst3.png" alt=""></a>
+            <a href="#" onclick="navigateToUrl('https://www.tristate-bearing.com/locations')"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/LOCATIONS4.png" alt="Locations"></a>
         </div>
         <button class="carousel-arrow left"></button>
         <button class="carousel-arrow right"></button>
     </div>
 
+    <form id="redirectForm" method="get" style="display:none;"></form>
+
     <script>
-        function openLink(url) {
-            if (window.top === window.self) {
-                // No iframe, open in same tab
-                window.location.href = url;
-            } else {
-                // Inside iframe, try to open in parent
-                window.top.location.href = url;
-            }
+        function navigateToUrl(url) {
+            const form = document.getElementById('redirectForm');
+            form.action = url;
+            form.submit();
         }
 
         const carouselInner = document.querySelector('.carousel-inner');
