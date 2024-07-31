@@ -29,11 +29,16 @@
             width: 100%;
             height: 100%;
         }
+        .carousel-inner a {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+        }
         .carousel-inner img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            flex-shrink: 0;
+            display: block; /* Ensure the image takes the full size of the link */
         }
         .carousel-arrow {
             position: absolute;
@@ -77,10 +82,10 @@
 <body>
     <div class="carousel">
         <div class="carousel-inner">
-            <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/Timken_Select_1923x450.png" alt="">
-            <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/20240418_0fjhjrjyu90829.png" alt="">
-            <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/tst3.png" alt="">
-            <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/LOCATIONS4.png" alt="Locations">
+            <a href="https://www.tristate-bearing.com/b/timken"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/Timken_Select_1923x450.png" alt=""></a>
+            <a href="https://www.tristate-bearing.com/c/conveyors-&-conveyor-parts"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/20240418_0fjhjrjyu90829.png" alt=""></a>
+            <a href="https://www.tristate-bearing.com/searchPage.action?keyWord=agricultural"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/tst3.png" alt=""></a>
+            <a href="https://www.tristate-bearing.com/locations"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/LOCATIONS4.png" alt="Locations"></a>
         </div>
         <button class="carousel-arrow left"></button>
         <button class="carousel-arrow right"></button>
@@ -91,7 +96,7 @@
         const leftArrow = document.querySelector('.carousel-arrow.left');
         const rightArrow = document.querySelector('.carousel-arrow.right');
         let currentIndex = 0;
-        const totalImages = document.querySelectorAll('.carousel-inner img').length;
+        const totalImages = document.querySelectorAll('.carousel-inner a').length;
 
         function updateCarousel() {
             carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -110,7 +115,7 @@
         rightArrow.addEventListener('click', showNextImage);
         leftArrow.addEventListener('click', showPreviousImage);
 
-        setInterval(showNextImage, 6000); // Auto cycle every 5 seconds
+        setInterval(showNextImage, 6000); // Auto cycle every 6 seconds
     </script>
 </body>
 </html>
