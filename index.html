@@ -82,16 +82,20 @@
 <body>
     <div class="carousel">
         <div class="carousel-inner">
-            <a href="https://www.tristate-bearing.com/b/timken"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/Timken_Select_1923x450.png" alt=""></a>
-            <a href="https://www.tristate-bearing.com/c/conveyors-&-conveyor-parts"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/20240418_0fjhjrjyu90829.png" alt=""></a>
-            <a href="https://www.tristate-bearing.com/searchPage.action?keyWord=agricultural"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/tst3.png" alt=""></a>
-            <a href="https://www.tristate-bearing.com/locations"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/LOCATIONS4.png" alt="Locations"></a>
+            <a href="#" onclick="openLink('https://www.tristate-bearing.com/b/timken')"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/Timken_Select_1923x450.png" alt=""></a>
+            <a href="#" onclick="openLink('https://www.tristate-bearing.com/c/conveyors-&-conveyor-parts')"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/20240418_0fjhjrjyu90829.png" alt=""></a>
+            <a href="#" onclick="openLink('https://www.tristate-bearing.com/searchPage.action?keyWord=agricultural')"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/tst3.png" alt=""></a>
+            <a href="#" onclick="openLink('https://www.tristate-bearing.com/locations')"><img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/LOCATIONS4.png" alt="Locations"></a>
         </div>
         <button class="carousel-arrow left"></button>
         <button class="carousel-arrow right"></button>
     </div>
 
     <script>
+        function openLink(url) {
+            window.top.location.href = url;
+        }
+
         const carouselInner = document.querySelector('.carousel-inner');
         const leftArrow = document.querySelector('.carousel-arrow.left');
         const rightArrow = document.querySelector('.carousel-arrow.right');
