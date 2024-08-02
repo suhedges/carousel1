@@ -10,17 +10,25 @@
             margin: 0;
             padding: 0;
             background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Ensure the body takes the full height of the viewport */
         }
 
         .carousel-container {
             margin: 0;
             padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%; /* Make the container take the full height of the body */
         }
 
         .carousel {
             position: relative;
             width: 1440px; /* 85% of 1920px */
-            height: 100%; /* Ensuring no extra space */
+            height: 450px; /* Set a fixed height for the carousel */
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
