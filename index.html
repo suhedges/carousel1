@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carousel Banner</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,10 +12,15 @@
             background-color: #ffffff;
         }
 
+        .carousel-container {
+            margin: 0;
+            padding: 0;
+        }
+
         .carousel {
             position: relative;
             width: 1440px; /* 85% of 1920px */
-            height: auto; /* 85% of 450px */
+            height: 100%; /* Ensuring no extra space */
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -92,23 +96,25 @@
 </head>
 
 <body>
-    <div class="carousel">
-        <div class="carousel-inner">
-            <a href="#" onclick="navigateToUrl('https://www.tristate-bearing.com/b/timken')">
-                <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/Timken_Select_1923x450.png" alt="">
-            </a>
-            <a href="#" onclick="navigateToUrl('https://www.tristate-bearing.com/c/conveyors-&-conveyor-parts')">
-                <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/20240418_0fjhjrjyu90829.png" alt="">
-            </a>
-            <a href="#" onclick="navigateToUrl('https://www.tristate-bearing.com/searchPage.action?keyWord=agricultural')">
-                <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/tst3.png" alt="">
-            </a>
-            <a href="#" onclick="navigateToUrl('https://www.tristate-bearing.com/locations')">
-                <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/LOCATIONS4.png" alt="Locations">
-            </a>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <a href="#" onclick="navigateToUrl('https://www.tristate-bearing.com/b/timken')">
+                    <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/Timken_Select_1923x450.png" alt="">
+                </a>
+                <a href="#" onclick="navigateToUrl('https://www.tristate-bearing.com/c/conveyors-&-conveyor-parts')">
+                    <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/20240418_0fjhjrjyu90829.png" alt="">
+                </a>
+                <a href="#" onclick="navigateToUrl('https://www.tristate-bearing.com/searchPage.action?keyWord=agricultural')">
+                    <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/tst3.png" alt="">
+                </a>
+                <a href="#" onclick="navigateToUrl('https://www.tristate-bearing.com/locations')">
+                    <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/BANNERLOGO/LOCATIONS4.png" alt="Locations">
+                </a>
+            </div>
+            <button class="carousel-arrow left"></button>
+            <button class="carousel-arrow right"></button>
         </div>
-        <button class="carousel-arrow left"></button>
-        <button class="carousel-arrow right"></button>
     </div>
 
     <form id="redirectForm" method="get" style="display:none;"></form>
